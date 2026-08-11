@@ -1,0 +1,1003 @@
+1
+00:00:00,000 --> 00:00:09,760
+[SPEAKER_02] recording is on okay so welcome to the day two of the training so yesterday we discussed five
+
+2
+00:00:09,760 --> 00:00:25,720
+[SPEAKER_05] topics in how to build a rag we will try to review that and also we have you all might have explored
+
+3
+00:00:25,720 --> 00:00:35,020
+[SPEAKER_00] yesterday's topics so i'll give you three minutes each to talk about each topic what you have learned
+
+4
+00:00:35,020 --> 00:00:41,320
+[SPEAKER_00] yesterday and some what you have found something new which you want to share with the team here
+
+5
+00:00:41,320 --> 00:00:42,940
+[SPEAKER_00] right so
+
+6
+00:00:42,940 --> 00:00:51,380
+[SPEAKER_04] let me pull yesterday's
+
+7
+00:00:51,380 --> 00:01:07,200
+[SPEAKER_02] yeah so quickly summarize yesterday's slides
+
+8
+00:01:07,200 --> 00:01:14,840
+[SPEAKER_05] so first we went with the chunking part right so
+
+9
+00:01:14,840 --> 00:01:25,020
+[SPEAKER_00] how do you how do you decide the chunk size and the overlap then we discussed the embeddings
+
+10
+00:01:25,020 --> 00:01:33,700
+[SPEAKER_00] what is cosine and how the comparison works then we discussed vector index and top k so how much
+
+11
+00:01:33,700 --> 00:01:42,400
+[SPEAKER_00] should be the K should low or high if it is low it will never make the cut the right chunk will never
+
+12
+00:01:42,400 --> 00:01:48,700
+[SPEAKER_00] make the cut if it is too high the prompt will be loosely related to noise and signal gets diluted
+
+13
+00:01:48,700 --> 00:01:57,680
+[SPEAKER_05] then we discussed grounding and how we will see the problems with overflow or conflict
+
+14
+00:01:57,680 --> 00:02:00,840
+[SPEAKER_05] and then the retriever
+
+15
+00:02:00,840 --> 00:02:16,660
+[SPEAKER_17] so yeah based on these topics i'll ask ananya and akshay to talk about these five topics for three minutes so
+
+16
+00:02:16,660 --> 00:02:18,660
+[SPEAKER_02] ananya please go ahead
+
+17
+00:02:18,660 --> 00:02:34,660
+[SPEAKER_23] yeah so in chunking i have explored mostly adaptive chunking so basically in adaptive chunking it means the chunk size is not fixed like in fixed chunking in this the system basically it changes the chunk size depending on the document structure or the content so basically like we have a like basically the
+
+18
+00:02:34,660 --> 00:03:02,660
+[SPEAKER_23] advantage we get here using adaptive chunking is it preserves the context which helps better than the fixed size chunking so it helps the system more efficient and also i learnt about one more chunking technique that is hierarchical chunking
+
+19
+00:03:02,660 --> 00:03:32,660
+[SPEAKER_23] that is hierarchical chunking which is basically it organizes a document into multiple level such as document section paragraph and sentence it divides it into different sections and this allows the retriever to i mean to retrieve the important information at different levels and so in these two i learned in chunking part and then
+
+20
+00:03:32,660 --> 00:04:00,660
+[SPEAKER_23] uh coming to the embedding parts uh in embedding i learned about domain specific embeddings so as in uh domain specific embeddings we have uh uh domain specific like uh the embedding models are trained in a specific field instead of a general uh particular text so in that we have like uh we can use it for medical documents legal contracts and for any other thing like uh research papers and all
+
+21
+00:04:00,660 --> 00:04:09,220
+[SPEAKER_23] so uh so uh we can uh train that particular uh model on uh i mean domain uh on a particular domain so that
+
+22
+00:04:09,220 --> 00:04:19,380
+[SPEAKER_23] it will uh give us i mean uh that domain related uh accurate answers and uh next coming to top k uh so
+
+23
+00:04:19,380 --> 00:04:28,180
+[SPEAKER_23] so i learned about uh dynamic topic in which uh in instead of always retrieving a fixed number of chunks the system
+
+24
+00:04:28,180 --> 00:04:38,020
+[SPEAKER_23] changes the k depending on the query so uh let's say example uh like i have a question like i have a query like
+
+25
+00:04:38,020 --> 00:04:47,620
+[SPEAKER_23] what is uh i mean what is python so it is of three uh i mean modes so uh it will retrieve the top three so
+
+26
+00:04:47,620 --> 00:04:56,900
+[SPEAKER_23] that is our dynamic or top k walks with which i uh learned about and uh next i learned about in uh retrieval i
+
+27
+00:04:56,900 --> 00:05:04,980
+[SPEAKER_23] learned about multi-query retrieval which is uh in which basically uh like uh instead of searching with only the
+
+28
+00:05:04,980 --> 00:05:12,740
+[SPEAKER_23] users i mean original query which the user has given as input the system generate multiple versions of it
+
+29
+00:05:12,740 --> 00:05:19,940
+[SPEAKER_23] so that uh using all of the query it combines the results and it finds the relevant information even
+
+30
+00:05:19,940 --> 00:05:26,100
+[SPEAKER_23] if the uh i mean word is not present in the document and it is different from the user query like using
+
+31
+00:05:26,100 --> 00:05:34,020
+[SPEAKER_23] semantic search and uh next uh and the last one like measure we have to measure so uh in that i learned
+
+32
+00:05:34,020 --> 00:05:44,340
+[SPEAKER_20] about uh more about recall k so uh uh in recall at k we have this formula like uh we have the total or
+
+33
+00:05:44,340 --> 00:05:52,020
+[SPEAKER_24] relevant chunks we have retrieved that is divided by the total or like relevant chunks we have retrieved that
+
+34
+00:05:52,020 --> 00:05:58,660
+[SPEAKER_23] that is divided by the total or relevant chunks so in this uh how often the correct documents are uh
+
+35
+00:05:58,660 --> 00:06:07,060
+[SPEAKER_23] which appears within the top k retrieved referral that is also so uh yeah that was uh which i explored about
+
+36
+00:06:09,940 --> 00:06:13,380
+[SPEAKER_04] okay so just one question like uh
+
+37
+00:06:14,500 --> 00:06:24,980
+[SPEAKER_05] uh what problem did fixed side chunking cause that uh you explored uh adaptive uh chunking can you point
+
+38
+00:06:24,980 --> 00:06:34,260
+[SPEAKER_23] to a specific uh failed retrieval or a problem you have seen uh problem in adaptive chunking i think uh
+
+39
+00:06:34,260 --> 00:06:42,020
+[SPEAKER_23] like uh like uh in case of fixed text uh fixed size chunking the size is like we have a fixed size like
+
+40
+00:06:42,020 --> 00:06:50,020
+[SPEAKER_23] 200 or 300 but in adaptive it uh changes dynamically so uh like the system adapts dynamically so we don't have
+
+41
+00:06:50,020 --> 00:06:59,060
+[SPEAKER_23] to i mean uh look into it properly it will uh look if a paragraph is uh sort so it will uh put it into one
+
+42
+00:06:59,060 --> 00:07:07,940
+[SPEAKER_23] chunk and for paragraph is basically if we say long then it will basically divided into uh smaller chunks and uh
+
+43
+00:07:08,900 --> 00:07:17,780
+[SPEAKER_23] like this only it will work mostly so in that case in fixed size chunk we don't uh have that uh advantage so
+
+44
+00:07:17,780 --> 00:07:28,820
+[SPEAKER_30] in this thing we can uh have that so yeah okay okay okay um actually uh go ahead uh sir i'd like to
+
+45
+00:07:28,820 --> 00:07:36,420
+[SPEAKER_31] speak on a different topic is it okay yeah anything you learn or anything rag or it's about inference
+
+46
+00:07:36,420 --> 00:07:44,260
+[SPEAKER_36] optimization sir okay go ahead so yeah basically we have this large language models which takes a lot of
+
+47
+00:07:44,260 --> 00:07:52,500
+[SPEAKER_36] memory usage from ram and uh so it makes the model um it generates the response much more slower and takes
+
+48
+00:07:52,500 --> 00:07:57,540
+[SPEAKER_35] lot of computing time so what the optimization techniques does is like we have four optimization
+
+49
+00:07:57,540 --> 00:08:03,620
+[SPEAKER_04] optimization techniques the first the first one is quantization so suppose we have all these weights
+
+50
+00:08:03,620 --> 00:08:10,980
+[SPEAKER_31] in hidden layers which are stored using in floating points which occupy more number of bits like fp 32 int 8
+
+51
+00:08:11,620 --> 00:08:19,860
+[SPEAKER_35] and then we reduce it to fp 16 or int 8 so that instead of a number which is represented in 32 bits
+
+52
+00:08:19,860 --> 00:08:26,260
+[SPEAKER_35] is actually represented in 16 bits in this way uh the matrix multiplication and all is much more faster
+
+53
+00:08:26,260 --> 00:08:34,980
+[SPEAKER_35] to compute these uh attention etc then the next way is done by using flash attention now uh for every uh qv we
+
+54
+00:08:34,980 --> 00:08:41,860
+[SPEAKER_31] actually uh store your matrix multiplication table in that way again it takes a huge amount of memory so
+
+55
+00:08:41,860 --> 00:08:48,420
+[SPEAKER_31] instead of that what this flash attention does is for a particular query it uh performs the uh multiplication
+
+56
+00:08:48,420 --> 00:08:55,460
+[SPEAKER_31] and apply softmax and then that discards the intermediate memory so that it doesn't occupy uh memory and
+
+57
+00:08:56,180 --> 00:09:02,500
+[SPEAKER_35] yeah and the third one is done by kv catch so every time we are generating a new token we have to attend
+
+58
+00:09:02,500 --> 00:09:07,780
+[SPEAKER_35] to the previous tokens as well what we have generated so that will take a lot of time and we have to
+
+59
+00:09:07,780 --> 00:09:13,540
+[SPEAKER_36] compute the kv of all the tokens so it will take around big of n square so rather than that what we do
+
+60
+00:09:13,540 --> 00:09:19,860
+[SPEAKER_35] is we store the kv of each token so that whenever uh a new token so whenever you're trying to generate a
+
+61
+00:09:19,860 --> 00:09:26,500
+[SPEAKER_35] new token we look at the uh already stored kv tokens of the uh previous tokens in that way it will be
+
+62
+00:09:26,500 --> 00:09:34,820
+[SPEAKER_35] reduce to big of n the time capacity and one more thing is called pruning suppose the weights uh are negligible or
+
+63
+00:09:34,820 --> 00:09:42,180
+[SPEAKER_31] they don't contribute much to the uh llm then we neglect or discard those llm in that way we like
+
+64
+00:09:42,180 --> 00:09:48,660
+[SPEAKER_05] uh a lot of the memory is to memory is uh safe so yeah this is what i want to say
+
+65
+00:09:50,660 --> 00:09:59,060
+[SPEAKER_05] okay you read it from corsaira or something or no sir yeah from udemy udemy can you share that uh udemy
+
+66
+00:09:59,060 --> 00:10:06,340
+[SPEAKER_04] links also to bharti and uh anania also yes yeah
+
+67
+00:10:10,020 --> 00:10:18,420
+[SPEAKER_00] so the follow-up question is uh just in plain sentence uh what do you think is like uh these four
+
+68
+00:10:19,940 --> 00:10:26,420
+[SPEAKER_00] inference optimization would help the uh help a business like uh it would help in cheaper bills
+
+69
+00:10:26,420 --> 00:10:34,020
+[SPEAKER_04] or faster replies or running it on a custom hardware so we can run this llm on laptops
+
+70
+00:10:34,020 --> 00:10:40,820
+[SPEAKER_31] uh it can take 16 gb of ram etc but when it comes to on a phone we can't run that much of we can't use
+
+71
+00:10:40,820 --> 00:10:48,500
+[SPEAKER_35] that much memory so we need maybe we can down like reduce it to four gb of ram x in that way we can
+
+72
+00:10:48,500 --> 00:10:59,620
+[SPEAKER_04] deploy the llm models even in phone as well okay so you are uh harvesting hardware uh uh you can run it in
+
+73
+00:10:59,620 --> 00:11:03,300
+[SPEAKER_00] lesser hardware yeah yes okay
+
+74
+00:11:06,900 --> 00:11:16,100
+[SPEAKER_00] and your uh you said you can fit that in four gb that is due to the uh floating pointing or floating
+
+75
+00:11:16,100 --> 00:11:23,700
+[SPEAKER_09] pointing as well as the weights even we remove weights which contribute uh basic or negligible so
+
+76
+00:11:23,700 --> 00:11:26,980
+[SPEAKER_09] okay in that way with the memory gets saved okay
+
+77
+00:11:35,380 --> 00:11:39,300
+[SPEAKER_04] okay got it i think yeah this is good um
+
+78
+00:11:41,300 --> 00:11:47,780
+[SPEAKER_00] main uh ananya and bharati so uh akshay did uh uh explore a new topic so
+
+79
+00:11:50,020 --> 00:11:56,020
+[SPEAKER_00] either you can explore new topic or you can stick to the topic and go deeper either way is fine so
+
+80
+00:11:56,020 --> 00:12:05,540
+[SPEAKER_00] the whole uh goal of these trainings is to uh self-explore things discuss and then uh we keep on
+
+81
+00:12:06,260 --> 00:12:12,580
+[SPEAKER_00] improving ourselves and we keep on learning new things right so feel free to pick any topic related to
+
+82
+00:12:12,580 --> 00:12:20,820
+[SPEAKER_00] ai llm rag or i think anana you are working with opencv facial recognition right so those also we can uh
+
+83
+00:12:20,820 --> 00:12:30,340
+[SPEAKER_00] discuss and uh yeah uh we'll keep on adding things so maybe uh this uh inference optimization we'll have
+
+84
+00:12:30,340 --> 00:12:38,420
+[SPEAKER_00] in week two or week three but yeah so whatever you learn keep uh sharing and then uh based on that we will
+
+85
+00:12:40,180 --> 00:12:45,620
+[SPEAKER_00] we will update the training plan
+
+86
+00:12:48,020 --> 00:12:57,620
+[SPEAKER_00] so let's start with uh the day two training so and yeah i forgot uh akshay and ananya did you
+
+87
+00:12:58,580 --> 00:13:09,220
+[SPEAKER_04] check yesterday's task yes sir so you have any uh numbers which you can share changing the chunk size and
+
+88
+00:13:10,180 --> 00:13:20,260
+[SPEAKER_05] recall okay when i used the chunk size of around 200 i got it the recall was around 0.89 so okay then
+
+89
+00:13:20,260 --> 00:13:27,860
+[SPEAKER_04] again when i used 400 it was 0.92 or something like that okay then again when i used 700 the recall
+
+90
+00:13:27,860 --> 00:13:35,300
+[SPEAKER_31] decreased it came to 0.85 yeah so when we use the optimal value then it works better when we are using
+
+91
+00:13:35,300 --> 00:13:42,980
+[SPEAKER_05] more than that unnecessary uh information gets into the chunks okay we are using less size then yeah so
+
+92
+00:13:42,980 --> 00:13:53,300
+[SPEAKER_04] also share that document size also okay no no the pdf is around like 32 pages okay so 32 pages the optimal
+
+93
+00:13:53,300 --> 00:13:58,820
+[SPEAKER_04] chunk size is 600 400 400 okay and uh ananya
+
+94
+00:14:01,300 --> 00:14:09,060
+[SPEAKER_23] so in my case like the project i built the document uh i took which was of uh thousand products and the
+
+95
+00:14:09,060 --> 00:14:16,020
+[SPEAKER_23] products was actually i mean the description of the product was only one or uh one to two lines only
+
+96
+00:14:16,580 --> 00:14:23,700
+[SPEAKER_23] so in that case uh i mean chunking doesn't make any sense i don't think but uh like uh if i do chunking of
+
+97
+00:14:23,700 --> 00:14:33,700
+[SPEAKER_23] uh size uh size uh in case of like if i take or 200 or 200 in that case i got a recall of i think 0.81
+
+98
+00:14:34,420 --> 00:14:49,300
+[SPEAKER_20] and uh in case of if i took 500 then in that i got like 0.75 okay i think the ideal pdfs you should be using
+
+99
+00:14:49,300 --> 00:15:01,060
+[SPEAKER_24] you some uh book pdf or uh no i didn't use actually i mean pdf in that case it was i mean like gosh i mean csv
+
+100
+00:15:03,620 --> 00:15:09,620
+[SPEAKER_04] no no but for this rag which you are experimenting for the chunk and recall i think you should use a
+
+101
+00:15:09,620 --> 00:15:16,100
+[SPEAKER_04] file which has only yeah i will switch to i mean i'll just to include that pdf and all i'll i mean
+
+102
+00:15:17,140 --> 00:15:24,260
+[SPEAKER_04] include yeah bikini phd paper or a research paper so it will yeah i'll integrate yeah yeah
+
+103
+00:15:26,180 --> 00:15:28,660
+[SPEAKER_04] and what document uh you are using akshay
+
+104
+00:15:30,820 --> 00:15:38,260
+[SPEAKER_33] i used the solar pdf sir of uss solar installation right so i tried on it okay yeah good idea i'll i
+
+105
+00:15:38,260 --> 00:15:44,260
+[SPEAKER_00] forgot to share it yesterday also i asked the client to share some documents so i'll download more and i
+
+106
+00:15:44,260 --> 00:15:51,860
+[SPEAKER_00] will share and uh ananya also uh ananya i'll also share with you so these are the uh documents we are
+
+107
+00:15:52,420 --> 00:16:00,740
+[SPEAKER_07] getting from the client the client is a solar consultant who sets up solar panels on uh houses or
+
+108
+00:16:00,740 --> 00:16:08,420
+[SPEAKER_00] commercial places so we want to build a rag for them so that's why uh akshay is working on that and
+
+109
+00:16:08,420 --> 00:16:14,180
+[SPEAKER_00] today i'll have a separate call with you to explain the status of it and what we are planning so that you
+
+110
+00:16:14,180 --> 00:16:24,580
+[SPEAKER_00] will also be aware of the thing yeah and bharati uh did you get a chance to learn something you want to
+
+111
+00:16:24,580 --> 00:16:37,620
+[SPEAKER_52] share yes yeah i learned about drag and its workflow okay yes and i'm trying to implement a mini project
+
+112
+00:16:37,620 --> 00:16:43,780
+[SPEAKER_52] which will take pdfs or notes and that will give answer according to the query
+
+113
+00:16:44,340 --> 00:16:51,940
+[SPEAKER_05] so i'm just trying to learn yeah so i will have a i will schedule a separate call for you bharati uh
+
+114
+00:16:51,940 --> 00:17:00,900
+[SPEAKER_00] just to on the uh aiml basics so that you can come come to the speed with uh akshay and ananya akshay
+
+115
+00:17:00,900 --> 00:17:07,140
+[SPEAKER_00] and ananya have been like working on uh aml for one year so they might have been uh have a better
+
+116
+00:17:07,140 --> 00:17:13,700
+[SPEAKER_00] understanding so to bring you to that level we will have a separate uh training for you and then i think
+
+117
+00:17:13,700 --> 00:17:34,420
+[SPEAKER_00] maybe in a week or two weeks uh you can catch up and then you can also spend more time in aiml
+
+118
+00:17:34,420 --> 00:17:57,300
+[SPEAKER_06] okay so uh let's start with the day two uh training
+
+119
+00:17:59,460 --> 00:18:09,460
+[SPEAKER_06] and
+
+120
+00:18:10,660 --> 00:18:12,660
+[SPEAKER_05] yeah yesterday we named the pipeline
+
+121
+00:18:14,580 --> 00:18:20,980
+[SPEAKER_00] and we opened three parts cosine versus dot product approximate search and where retrieval breaks
+
+122
+00:18:21,940 --> 00:18:22,500
+[SPEAKER_02] right so
+
+123
+00:18:25,540 --> 00:18:26,340
+[SPEAKER_02] let's go ahead
+
+124
+00:18:30,740 --> 00:18:32,660
+[SPEAKER_05] so this is we already discussed
+
+125
+00:18:40,580 --> 00:18:47,140
+[SPEAKER_00] then let's go ahead with uh further or deep down into the topics of chunking and everything so
+
+126
+00:18:48,340 --> 00:18:54,340
+[SPEAKER_00] uh chunking uh it's about retrieval precision plus context window
+
+127
+00:18:55,300 --> 00:18:58,340
+[SPEAKER_00] not fitting a big file on disk chunking is not storage
+
+128
+00:18:58,980 --> 00:19:03,620
+[SPEAKER_00] so this and then top k uh retrieval bread dial at query time
+
+129
+00:19:04,500 --> 00:19:10,340
+[SPEAKER_00] it has nothing to do with over under fitting that's a training idea and then similarity is like not
+
+130
+00:19:10,340 --> 00:19:16,340
+[SPEAKER_00] something like cosine today you will know exactly what cosine measures and when dot product it disagrees
+
+131
+00:19:16,340 --> 00:19:18,580
+[SPEAKER_06] so these are the three things we will proceed with
+
+132
+00:19:21,380 --> 00:19:26,340
+[SPEAKER_14] so first starting with is uh this cosine versus dot dot product
+
+133
+00:19:29,060 --> 00:19:33,380
+[SPEAKER_04] so
+
+134
+00:19:33,380 --> 00:19:40,980
+[SPEAKER_26] based on the
+
+135
+00:19:44,580 --> 00:19:48,020
+[SPEAKER_04] i mean the two vectors same angle and different length
+
+136
+00:19:49,620 --> 00:19:54,180
+[SPEAKER_05] akshay which does a cosine prefer and which does dot prefer
+
+137
+00:19:57,940 --> 00:19:59,620
+[SPEAKER_32] well cosine prefers
+
+138
+00:20:02,100 --> 00:20:05,300
+[SPEAKER_33] i mean like if two vectors are similar than you prefer cosine sir
+
+139
+00:20:06,580 --> 00:20:11,620
+[SPEAKER_35] based on the angle between it and if the angle between these vectors are less then we'll say
+
+140
+00:20:11,620 --> 00:20:18,580
+[SPEAKER_05] like they're more similar to each other and dot product also rewards magnitude so yeah
+
+141
+00:20:19,540 --> 00:20:24,180
+[SPEAKER_04] so in your project which uh did your vector store use by default
+
+142
+00:20:25,220 --> 00:20:27,460
+[SPEAKER_19] cosine similarities for embeddings
+
+143
+00:20:30,820 --> 00:20:31,780
+[SPEAKER_04] and ananya
+
+144
+00:20:38,660 --> 00:20:45,700
+[SPEAKER_23] yeah so basically as i said cosine is basically it is mostly we use for uh like
+
+145
+00:20:46,420 --> 00:20:53,300
+[SPEAKER_23] to find the distance between all two embeddings and it ignores the length of the vector and in case of
+
+146
+00:20:53,300 --> 00:21:01,060
+[SPEAKER_23] like dot product it basically it measures the similarity using i mean both the angle and the length of the vectors
+
+147
+00:21:01,620 --> 00:21:06,420
+[SPEAKER_23] so uh like if the vector is longer then it can receive
+
+148
+00:21:07,300 --> 00:21:17,300
+[SPEAKER_23] high score and uh like semantic or similarities or similar so and in my project i used like cosine similarity
+
+149
+00:21:19,300 --> 00:21:29,780
+[SPEAKER_03] okay
+
+150
+00:21:31,060 --> 00:21:36,500
+[SPEAKER_02] so yeah uh good uh then let's go to the next slide
+
+151
+00:21:38,500 --> 00:21:46,180
+[SPEAKER_02] approximate search
+
+152
+00:21:50,180 --> 00:21:59,540
+[SPEAKER_00] the key idea is the trade so if you have uh 10 million vectors uh do you compare the query to all 10 million
+
+153
+00:22:00,820 --> 00:22:01,380
+[SPEAKER_05] ananya
+
+154
+00:22:05,700 --> 00:22:07,940
+[SPEAKER_09] yeah like i didn't get exactly
+
+155
+00:22:07,940 --> 00:22:09,460
+[SPEAKER_09] i mean the question
+
+156
+00:22:10,100 --> 00:22:13,540
+[SPEAKER_26] like if you have uh this embeddings right 10 million embeddings
+
+157
+00:22:14,260 --> 00:22:14,500
+[SPEAKER_03] yeah
+
+158
+00:22:14,500 --> 00:22:16,980
+[SPEAKER_26] and you have somebody runs a query
+
+159
+00:22:18,020 --> 00:22:21,620
+[SPEAKER_26] so you compare the query to all the 10 million embeddings or
+
+160
+00:22:22,260 --> 00:22:24,740
+[SPEAKER_04] what would be what would be what would be your approach
+
+161
+00:22:25,540 --> 00:22:32,980
+[SPEAKER_23] no i mean i wouldn't compare uh to the 10 million embeddings that would be it will take much memory and it will take much time
+
+162
+00:22:32,980 --> 00:22:40,340
+[SPEAKER_23] also i'll compare like or depending on the uh i mean like uh i'll see what exactly the user query wants
+
+163
+00:22:40,980 --> 00:22:50,020
+[SPEAKER_24] according to that i can uh i mean like if i want to using a semantic or search i can like uh search only the
+
+164
+00:22:50,020 --> 00:22:55,620
+[SPEAKER_23] unnecessary important embed i mean query which i want to retrieve and accordingly i can
+
+165
+00:22:56,740 --> 00:23:03,060
+[SPEAKER_23] retrieve i can compare and now retrieve like i don't need to compare the 10 million that would take much time
+
+166
+00:23:06,580 --> 00:23:06,820
+[SPEAKER_03] yeah
+
+167
+00:23:10,340 --> 00:23:12,260
+[SPEAKER_04] and akshay you have anything to add
+
+168
+00:23:14,660 --> 00:23:19,940
+[SPEAKER_35] yes sir like going through 1 million of uh embeddings will be difficult and it should be much more
+
+169
+00:23:19,940 --> 00:23:26,820
+[SPEAKER_31] inefficient so what we do is like we use annl for example and it will check uh it will compare the
+
+170
+00:23:26,820 --> 00:23:34,900
+[SPEAKER_31] query with the embeddings of the like for example you use pine cone or fss and based on that it checks the
+
+171
+00:23:34,900 --> 00:23:42,900
+[SPEAKER_31] true closest point but it may not be the actual point it checks the nearest neighbors as well and yeah it
+
+172
+00:23:42,900 --> 00:23:47,140
+[SPEAKER_09] retrieves the the top chance
+
+173
+00:23:57,140 --> 00:24:06,420
+[SPEAKER_17] so uh so uh in addition uh to our understanding we need to uh explore more about these topics so i'm just
+
+174
+00:24:06,420 --> 00:24:16,900
+[SPEAKER_17] giving you some ideas which you can explore on your time so this is hnsw and ivf right so hnsw is a navigable
+
+175
+00:24:16,900 --> 00:24:28,900
+[SPEAKER_05] graph uh graph uh then the the llm can hop towards the closer neighbors and it and it would be easier to
+
+176
+00:24:28,900 --> 00:24:37,940
+[SPEAKER_05] retrieve data right so hnsw is something you should explore and then ivf is uh partitioning vectors into cells
+
+177
+00:24:38,500 --> 00:24:45,780
+[SPEAKER_00] and then once you land into that particular partition then you can search the nearest cells so this is another approach
+
+178
+00:24:52,740 --> 00:25:02,740
+[SPEAKER_05] so all these things i think uh what will uh we try to do is uh we'll try to measure the whole thing so what is uh
+
+179
+00:25:04,740 --> 00:25:14,020
+[SPEAKER_00] accuracy with hnsw what is the accuracy with ivf right so then i think once you start experimenting with
+
+180
+00:25:14,020 --> 00:25:19,460
+[SPEAKER_07] these things you will come to the optimal approach and everything is like based on the data right so if either
+
+181
+00:25:19,460 --> 00:25:26,820
+[SPEAKER_07] it's a phd paper or if it's a certain set of solar documents or what anania was working with csv
+
+182
+00:25:27,380 --> 00:25:32,980
+[SPEAKER_17] so each of these approach will help us figure out the right technique to
+
+183
+00:25:35,540 --> 00:25:39,620
+[SPEAKER_55] parse the data and find the right item
+
+184
+00:25:44,740 --> 00:25:51,780
+[SPEAKER_05] then uh let's go deeper into the grounding part so we know grounding puts retrieve chunks into prompt so
+
+185
+00:25:51,780 --> 00:26:01,140
+[SPEAKER_00] that model answers from the data so we yesterday we were discussing overflow and conflict
+
+186
+00:26:03,380 --> 00:26:09,620
+[SPEAKER_00] and yeah retrieval maze is like right chunk never retrieved and model fills the gap with a confident guess
+
+187
+00:26:11,540 --> 00:26:12,740
+[SPEAKER_02] so you can
+
+188
+00:26:13,860 --> 00:26:14,740
+[SPEAKER_02] dig deeper into
+
+189
+00:26:15,380 --> 00:26:17,380
+[SPEAKER_12] these topics
+
+190
+00:26:30,260 --> 00:26:32,260
+[SPEAKER_14] so i think we covered this yesterday
+
+191
+00:26:34,180 --> 00:26:35,220
+[SPEAKER_14] then we
+
+192
+00:26:37,460 --> 00:26:38,580
+[SPEAKER_14] come to re-ranking
+
+193
+00:26:41,380 --> 00:26:43,940
+[SPEAKER_00] retrieving retrieve broad and keep few
+
+194
+00:26:44,580 --> 00:26:46,980
+[SPEAKER_00] so when we pull things we'll
+
+195
+00:26:47,860 --> 00:26:52,100
+[SPEAKER_00] pull as much as possible but then we take a call on what to
+
+196
+00:26:52,100 --> 00:26:56,100
+[SPEAKER_05] preserve in the memory so that we don't poison it and we don't overflow the context
+
+197
+00:26:57,380 --> 00:27:05,460
+[SPEAKER_04] so i think re-ranking is a technique which we can explore we can go through
+
+198
+00:27:11,140 --> 00:27:12,580
+[SPEAKER_05] so with re-ranking we can
+
+199
+00:27:14,740 --> 00:27:18,420
+[SPEAKER_26] decide on what to keep and what to throw away
+
+200
+00:27:22,500 --> 00:27:31,300
+[SPEAKER_04] so just explore uh on re-ranking also
+
+201
+00:27:31,700 --> 00:27:36,980
+[SPEAKER_16] so setting the k uh generous we can trim the noise before the prompt
+
+202
+00:27:40,660 --> 00:27:46,580
+[SPEAKER_05] it can fix uh it can fix uh the overflow and uh better chunks will reach the llm
+
+203
+00:27:48,420 --> 00:27:51,620
+[SPEAKER_05] and also the cost is like uh if we
+
+204
+00:27:53,380 --> 00:27:58,100
+[SPEAKER_05] do expensive scoring runs uh
+
+205
+00:27:58,660 --> 00:28:04,180
+[SPEAKER_00] i mean on a on a limited set if we do the scoring
+
+206
+00:28:05,140 --> 00:28:10,340
+[SPEAKER_00] then it would be cost optimized we need not run it on the entire data set
+
+207
+00:28:18,420 --> 00:28:22,100
+[SPEAKER_08] so take away from the slide is uh first pass recall second pass precision
+
+208
+00:28:24,820 --> 00:28:31,780
+[SPEAKER_05] so also explore cross encoder read anchors something for tomorrow or today for your learning
+
+209
+00:28:35,620 --> 00:28:37,540
+[SPEAKER_06] and then the last topic is uh
+
+210
+00:28:41,620 --> 00:28:50,820
+[SPEAKER_03] retrieval shift
+
+211
+00:28:53,540 --> 00:28:53,780
+[SPEAKER_22] so
+
+212
+00:28:57,540 --> 00:29:01,060
+[SPEAKER_04] the four things right from yesterday like chunking k and
+
+213
+00:29:02,660 --> 00:29:05,620
+[SPEAKER_02] capturing metrics and the k value
+
+214
+00:29:08,500 --> 00:29:14,340
+[SPEAKER_02] so i think you already tried these couple of things probably you can
+
+215
+00:29:17,220 --> 00:29:25,700
+[SPEAKER_17] practice again to understand understand the right configuration for different data sets right so
+
+216
+00:29:26,420 --> 00:29:36,020
+[SPEAKER_17] for phd papers for csv files and for different type of data sets i'll try to find some data sets
+
+217
+00:29:37,460 --> 00:29:44,020
+[SPEAKER_17] today and i'll share it with you some from our clients and some from the standard university publications
+
+218
+00:29:44,740 --> 00:29:51,860
+[SPEAKER_17] i think you can just uh keep experimenting with these and then trying to understand the
+
+219
+00:29:54,500 --> 00:30:00,980
+[SPEAKER_14] inner inner inner inner configurations and find the optimized values for a retrieval
+
+220
+00:30:07,220 --> 00:30:10,980
+[SPEAKER_14] so this is a task for tomorrow so i mean not tomorrow instead like
+
+221
+00:30:11,540 --> 00:30:14,900
+[SPEAKER_05] today and then we can discuss your task
+
+222
+00:30:17,220 --> 00:30:18,100
+[SPEAKER_05] output output tomorrow
+
+223
+00:30:21,620 --> 00:30:24,980
+[SPEAKER_05] so change one thing the chunk size overlap or k metric
+
+224
+00:30:25,860 --> 00:30:30,980
+[SPEAKER_05] and report the k delta with a one line guess for why it moved
+
+225
+00:30:32,660 --> 00:30:37,060
+[SPEAKER_05] change only one variable so the delta is attributable right so
+
+226
+00:30:38,580 --> 00:30:45,540
+[SPEAKER_09] any of these four you can change one by one and then uh document the
+
+227
+00:30:47,540 --> 00:30:55,220
+[SPEAKER_05] chain k delta and tomorrow i think we can again discuss your findings
+
+228
+00:30:56,980 --> 00:30:57,700
+[SPEAKER_05] any questions
+
+229
+00:31:06,180 --> 00:31:14,020
+[SPEAKER_07] yeah so i'll share that this depth with you and uh i will also uh yesterday i think you gave the
+
+230
+00:31:14,020 --> 00:31:19,700
+[SPEAKER_00] assessment right so today also i will send a new assessment for this session so these are the
+
+231
+00:31:19,700 --> 00:31:26,260
+[SPEAKER_17] three things uh which we will discuss tomorrow and i expect uh something from you so first is the task
+
+232
+00:31:26,900 --> 00:31:30,980
+[SPEAKER_17] second is uh go explore all these topics which we discussed today from the deck
+
+233
+00:31:31,540 --> 00:31:36,660
+[SPEAKER_17] and the third is the assessment so based on these three i think we will keep uh
+
+234
+00:31:37,380 --> 00:31:43,460
+[SPEAKER_17] updating our approach uh for the next uh next training sessions or next week so
+
+235
+00:31:44,100 --> 00:31:51,300
+[SPEAKER_17] uh i think this week i think we do today is thursday so until tomorrow we'll just uh focus on this rag
+
+236
+00:31:51,940 --> 00:32:02,340
+[SPEAKER_17] and then uh maybe we can pick uh akshay's topic for the next uh next week uh any suggestions from you ananya or
+
+237
+00:32:04,100 --> 00:32:16,420
+[SPEAKER_04] bharathy for new topics for new topics for new topics so i think we can explore uh mostly uh i think uh
+
+238
+00:32:17,620 --> 00:32:26,020
+[SPEAKER_04] mostly about llms we can give uh like card more on uh like transformers and all transformers okay
+
+239
+00:32:29,380 --> 00:32:37,060
+[SPEAKER_05] and bharathy any suggestions from you which which you find interesting and you think like like as a team we
+
+240
+00:32:37,060 --> 00:32:38,100
+[SPEAKER_05] should explore
+
+241
+00:32:45,940 --> 00:32:53,620
+[SPEAKER_52] so for now i don't know but and i will explore and yeah i will tell you yeah so if you find something
+
+242
+00:32:53,620 --> 00:33:00,980
+[SPEAKER_17] interesting and we are not discussing probably you can just float it up and then in subsequent uh meetings
+
+243
+00:33:00,980 --> 00:33:08,660
+[SPEAKER_14] we can explore together and uh learn things right so yes yeah keep an eye on new topics and new things
+
+244
+00:33:08,660 --> 00:33:15,700
+[SPEAKER_17] maybe and while we are uh discussing and exploring maybe something new is published right so we should
+
+245
+00:33:15,700 --> 00:33:27,700
+[SPEAKER_17] also keep an eye on the news and the blogs what other people are discussing okay yeah okay so yeah that's it
+
+246
+00:33:27,700 --> 00:33:36,660
+[SPEAKER_00] for today uh bharathy i will schedule a separate call for uh going uh giving the basics on aiml and i'll have
+
+247
+00:33:37,220 --> 00:33:45,300
+[SPEAKER_00] i'll schedule another call uh with ananya for uh introducing you to the solar client and the requirements
+
+248
+00:33:46,420 --> 00:33:59,220
+[SPEAKER_00] and akshay uh i think uh what uh we will also have a we'll have a meeting for uh discussing the status of
+
+249
+00:33:59,220 --> 00:34:07,140
+[SPEAKER_05] your this one proposal right yeah yes yeah so these three three three meetings i'll uh ping you about the time and
+
+250
+00:34:07,140 --> 00:34:16,100
+[SPEAKER_05] and everything okay yeah that's it uh go ahead and keep learning and please share your learnings tomorrow
+
+251
+00:34:18,420 --> 00:34:27,540
+[SPEAKER_05] okay yeah that's it thank you everyone

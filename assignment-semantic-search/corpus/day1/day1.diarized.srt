@@ -1,0 +1,779 @@
+1
+00:00:00,480 --> 00:00:01,360
+[SPEAKER_01] recording is on
+
+2
+00:00:03,840 --> 00:00:10,880
+[SPEAKER_00] okay so uh welcome to the day one of training so for the next six months we'll be
+
+3
+00:00:12,080 --> 00:00:23,040
+[SPEAKER_02] having this uh one hour per day training on uh ai ml rag embeddings and cnn and llms so
+
+4
+00:00:24,320 --> 00:00:34,400
+[SPEAKER_00] before diving into the training uh what i would think is uh we need to just uh refresh right
+
+5
+00:00:34,400 --> 00:00:41,760
+[SPEAKER_02] what you what you people like akshay ananya and bharti you three people have already explored on
+
+6
+00:00:41,760 --> 00:00:50,080
+[SPEAKER_02] these topics so let's refresh that and our approach for this training would be that we won't
+
+7
+00:00:52,640 --> 00:00:58,400
+[SPEAKER_00] teach you something from scratch so what we will do is whatever you are you have already tried you
+
+8
+00:00:58,400 --> 00:01:04,640
+[SPEAKER_02] have learned we will try to build on top of it and it's your duty to learn new things every day
+
+9
+00:01:05,200 --> 00:01:10,160
+[SPEAKER_02] come back to the training and say today you have learned this you have learned a you have learned
+
+10
+00:01:10,160 --> 00:01:15,280
+[SPEAKER_00] b you have learned weights you have learned reinforced learning or something and whatever you
+
+11
+00:01:15,280 --> 00:01:23,840
+[SPEAKER_00] tell us that you have learned based on top of that we'll keep on adding uh supplement information like
+
+12
+00:01:25,600 --> 00:01:30,080
+[SPEAKER_00] the approach you did like how did you do that approach then we will keep on improving that
+
+13
+00:01:30,080 --> 00:01:37,280
+[SPEAKER_00] approach we'll suggest new topics new trainings new material so don't treat this training as a
+
+14
+00:01:37,840 --> 00:01:42,160
+[SPEAKER_02] classic college training like where the professor comes or the lecturer comes to the
+
+15
+00:01:43,680 --> 00:01:49,680
+[SPEAKER_02] your classroom and he gives a one-way session and then leaves and then you try to figure it out so
+
+16
+00:01:49,680 --> 00:01:55,200
+[SPEAKER_02] you need to figure it out first you come back with what you learned daily and then based on top of that
+
+17
+00:01:55,200 --> 00:02:04,720
+[SPEAKER_00] we'll keep on increasing the level of uh hardness in the material okay so uh so today is the first session
+
+18
+00:02:05,600 --> 00:02:13,280
+[SPEAKER_02] so we will not uh i mean you people uh have already some knowledge so let's refresh that knowledge and
+
+19
+00:02:13,840 --> 00:02:23,600
+[SPEAKER_02] based on your cvs i don't have bharti's cv but based on uh ananias and uh akshay cv i created this deck
+
+20
+00:02:23,600 --> 00:02:29,440
+[SPEAKER_00] so we'll just refresh your uh both cvs and we'll try to understand what you have already explored okay
+
+21
+00:02:34,320 --> 00:02:43,360
+[SPEAKER_00] so let's quickly start with akshay so just walk us through one drive project you have built okay just
+
+22
+00:02:43,360 --> 00:02:50,880
+[SPEAKER_00] keep it to one minute or two minutes so i basically built a rack project where uh you know basically
+
+23
+00:02:50,880 --> 00:02:58,160
+[SPEAKER_02] uploaded some pdf and then the land the llm model will basically retrieve text from the pdf so it's not
+
+24
+00:02:58,160 --> 00:03:05,360
+[SPEAKER_02] hallucinate so uh the the vector database will find the similarity of the the query and as well as the
+
+25
+00:03:05,360 --> 00:03:10,560
+[SPEAKER_02] documents the embeddings of the documents and based on that you could retrieve the top uh revealed chunks
+
+26
+00:03:10,560 --> 00:03:17,680
+[SPEAKER_00] in this way it would not uh hallucinate or you know the answers would be grounded with respect to the
+
+27
+00:03:17,680 --> 00:03:24,960
+[SPEAKER_02] context okay so uh what do you ananya please just walk us through one rag you built
+
+28
+00:03:27,440 --> 00:03:34,000
+[SPEAKER_03] yeah so basically i have built a rag-based e-commerce support system so uh and that thing uh i have
+
+29
+00:03:34,000 --> 00:03:40,240
+[SPEAKER_03] first uh first we have to load the documents and uh the documents are first converted into chunks and
+
+30
+00:03:40,240 --> 00:03:45,360
+[SPEAKER_03] those chunks and converted into embeddings and uh those embeddings are stored in a basically vector
+
+31
+00:03:45,360 --> 00:03:52,640
+[SPEAKER_03] database and i have used a fast in this case and after uh it is stored in a vector database when a user
+
+32
+00:03:52,640 --> 00:03:58,480
+[SPEAKER_03] gives us a prompt that prompt is also embedded and it is uh sent as a context to the llm which will give
+
+33
+00:03:58,480 --> 00:04:07,040
+[SPEAKER_00] us a uh i mean context of a response and accurate response according to the user query okay bharati
+
+34
+00:04:08,880 --> 00:04:18,320
+[SPEAKER_00] can you walk us through any rag project you have built no sir okay let's uh next go to the next question
+
+35
+00:04:18,320 --> 00:04:24,240
+[SPEAKER_00] what goes into the prompt versus what stays in the vector database uh and any you want to start
+
+36
+00:04:27,440 --> 00:04:33,040
+[SPEAKER_00] yeah so in case of prompt we have to i mean design the prompt very systematically so the uh system does
+
+37
+00:04:33,040 --> 00:04:40,800
+[SPEAKER_03] not i mean hallucinate and it will give us i mean uh context related uh answers uh so we have to uh keep it
+
+38
+00:04:40,800 --> 00:04:45,520
+[SPEAKER_03] i mean uh in uh prompt engineering we have different techniques like we have chain of thoughts we have a
+
+39
+00:04:45,520 --> 00:04:52,400
+[SPEAKER_03] few short uh prompting so using that thing uh we can give a proper uh prompt to the uh lm so that it
+
+40
+00:04:52,400 --> 00:04:59,840
+[SPEAKER_00] will give us uh i mean accurate answer and what stays in the vector database so coming to the vector
+
+41
+00:04:59,840 --> 00:05:05,760
+[SPEAKER_00] database i think that uh mostly the embeddings are stored and uh that vector database and uh the vectors
+
+42
+00:05:05,760 --> 00:05:12,640
+[SPEAKER_03] are mostly i mean all like the embeddings are mostly uh they're in the vector database okay uh actually
+
+43
+00:05:12,640 --> 00:05:21,520
+[SPEAKER_00] you want to add something that's it okay so next let's go to the next question um why did you split
+
+44
+00:05:21,520 --> 00:05:27,600
+[SPEAKER_00] documents into chunks and what size did you choose so basically you cannot upload all the documents into the
+
+45
+00:05:28,160 --> 00:05:33,360
+[SPEAKER_00] vector database so obviously some sometimes we may contain previous that may contain 10 billion
+
+46
+00:05:33,360 --> 00:05:40,160
+[SPEAKER_00] of size yeah so we have to split it uh using maybe chunks and we have to set the size of it and we
+
+47
+00:05:40,160 --> 00:05:46,080
+[SPEAKER_00] also have to set the size overlap as well so that some some parts of the previous documents are also added
+
+48
+00:05:46,080 --> 00:05:53,120
+[SPEAKER_00] to the next okay yeah okay so and what is the size it depends on the uh periods we have sometimes for a
+
+49
+00:05:53,120 --> 00:06:03,360
+[SPEAKER_00] normal uh 10 days period we can use around 500 to 600 chunks okay uh adanya do you agree or do you have
+
+50
+00:06:03,360 --> 00:06:10,000
+[SPEAKER_00] any difference of opinion uh what i think we need to chunk documents because uh yeah as access it uh we
+
+51
+00:06:10,000 --> 00:06:16,480
+[SPEAKER_03] need to like uh split it into i mean smaller uh chunks so that it will be easier for us uh and also for the
+
+52
+00:06:16,480 --> 00:06:24,080
+[SPEAKER_03] system to i mean like give the answers so uh yeah if we have like a one or two like i mean like size or pdf
+
+53
+00:06:24,080 --> 00:06:30,560
+[SPEAKER_03] or something so we have to chunk first then only it will be uh i mean like easy for us to uh convert
+
+54
+00:06:30,560 --> 00:06:36,800
+[SPEAKER_03] into it into embeddings and generate all those things and coming to size as access it yeah it depends on
+
+55
+00:06:36,800 --> 00:06:45,760
+[SPEAKER_00] uh the system mostly so yeah okay we can keep it like 200 to 500 or 200 to 300 600 500 to 600 depends on
+
+56
+00:06:45,760 --> 00:07:08,880
+[SPEAKER_00] the system okay so let's uh let's move towards the search so what does an embedding actually represent
+
+57
+00:07:09,440 --> 00:07:22,400
+[SPEAKER_00] bharati you want to try
+
+58
+00:07:23,360 --> 00:07:29,760
+[SPEAKER_00] okay akshay so the model does not understand the raw text so basically convert them into uh vector
+
+59
+00:07:29,760 --> 00:07:36,320
+[SPEAKER_00] representation so yeah that's what embedding actually yeah embedding is a vector representation
+
+60
+00:07:36,320 --> 00:07:46,560
+[SPEAKER_00] representation of the date yeah now anania you want to add anything yeah so basically it is a numerical
+
+61
+00:07:46,560 --> 00:07:52,880
+[SPEAKER_00] representation and a vector form okay then let's go to the next question when you run a similarity search
+
+62
+00:07:52,880 --> 00:08:00,640
+[SPEAKER_00] how does it decide which chunks are closest uh anania you want to answer yeah so they're basically like
+
+63
+00:08:00,640 --> 00:08:08,080
+[SPEAKER_00] uh we have uh we have uh different uh i think like uh or like similarity search in that case we have uh
+
+64
+00:08:08,080 --> 00:08:14,720
+[SPEAKER_00] k close something i don't remember exactly the i mean term but it is it is something like uh yeah
+
+65
+00:08:14,720 --> 00:08:22,320
+[SPEAKER_00] cosine similarity so using that we can i think uh like uh it uh decides which are it uh find basically which
+
+66
+00:08:22,320 --> 00:08:29,280
+[SPEAKER_03] which are the closest or chunks and uh basically and it returns or so i mean like uh it returns it retrieves
+
+67
+00:08:29,280 --> 00:08:37,040
+[SPEAKER_00] the most uh closest chunks so that we can give it to uh llm so using that cosine similarity i think we can
+
+68
+00:08:37,040 --> 00:08:45,920
+[SPEAKER_00] now actually anything to add so when you convert it to a representation uh data which are similar to each
+
+69
+00:08:45,920 --> 00:08:51,360
+[SPEAKER_00] other have a cosine similarity which is high and which are far from each other they have a lower value
+
+70
+00:08:55,920 --> 00:09:03,360
+[SPEAKER_00] then uh you said k top k what happens if k is too small what if it's too large actually you want to answer
+
+71
+00:09:12,160 --> 00:09:19,520
+[SPEAKER_02] sometimes if the k is too small we may not receive the uh important data like we may receive this uh
+
+72
+00:09:20,400 --> 00:09:26,960
+[SPEAKER_02] what we call less responses the case too large of this uh darkness that we embedded in it are very less then it would be a problem
+
+73
+00:09:26,960 --> 00:09:28,800
+[SPEAKER_00] it would be a s and negative score
+
+74
+00:09:34,800 --> 00:09:38,000
+[SPEAKER_00] Ananya you want to add anything
+
+75
+00:09:43,440 --> 00:09:49,840
+[SPEAKER_00] i think uh yeah mostly setting i mean if we set k incorrectly then that will impact the model
+
+76
+00:09:49,840 --> 00:09:58,080
+[SPEAKER_03] uh i mean uh accuracy i mean ability to learn so uh in that case we have to the case too large in that case it uh
+
+77
+00:09:58,640 --> 00:10:06,320
+[SPEAKER_03] the model looks as a very i mean uh broad neighborhood or something like that and it also likes over the effect
+
+78
+00:10:06,320 --> 00:10:13,200
+[SPEAKER_03] will be if the case too small uh it will uh i mean lead to overfitting and in case of it is too large
+
+79
+00:10:13,200 --> 00:10:19,280
+[SPEAKER_03] then it will cause underfitting so we need to take care of that thing in case of uh setting the k
+
+80
+00:10:19,280 --> 00:10:28,080
+[SPEAKER_01] so next uh let's move towards vision and results uh mostly uh focus for you ananya but actually if you have any
+
+81
+00:10:28,080 --> 00:10:36,720
+[SPEAKER_00] any inputs you can also give but yeah uh just uh over to you ananya for all these three questions i think you have more uh info about these
+
+82
+00:10:36,720 --> 00:10:46,320
+[SPEAKER_02] yeah so basically in case of cnn uh project so uh cnn is basically uh convolution neural network uh it is
+
+83
+00:10:46,320 --> 00:10:58,000
+[SPEAKER_02] mostly used for image-based tasks and uh the model decides basically uh so the cnn is uh i mean it uh tries to
+
+84
+00:10:58,000 --> 00:11:15,280
+[SPEAKER_03] identify the pattern it is mostly it is the uh
+
+85
+00:11:15,280 --> 00:11:22,400
+[SPEAKER_03] retrieves the uh facial features like ages texture color and other things and uh accordingly it will uh
+
+86
+00:11:23,040 --> 00:11:31,040
+[SPEAKER_03] i mean give us a proper uh the model learn from that pattern and of when a new face or something as a new
+
+87
+00:11:31,040 --> 00:11:38,080
+[SPEAKER_00] image is given to the system it will basically uh recognize it will try to recognize what it learned from the patterns
+
+88
+00:11:42,800 --> 00:11:48,240
+[SPEAKER_00] yeah so and uh coming to the second question uh coming to the accuracy figure uh in machine learning we
+
+89
+00:11:48,240 --> 00:11:53,440
+[SPEAKER_03] have uh different techniques like we have precise on recall f1 score and our conclusion matrix so using
+
+90
+00:11:53,440 --> 00:12:00,080
+[SPEAKER_03] that thing uh we can measure the accuracy of any model we have uh built uh so using that thing and
+
+91
+00:12:00,080 --> 00:12:07,440
+[SPEAKER_00] coming to precision so basically it is like uh out of predicted positives how many were uh i mean uh how many
+
+92
+00:12:07,440 --> 00:12:16,640
+[SPEAKER_00] were uh found and uh coming to uh recall it is like how many were correctly uh detected and coming to uh the
+
+93
+00:12:16,640 --> 00:12:21,360
+[SPEAKER_03] confusion matrix in that case we have like two positive two negatives false positives and false
+
+94
+00:12:21,360 --> 00:12:28,000
+[SPEAKER_03] negative so it is basically like our table matrix and uh yes and coming to f1 score it is basically like
+
+95
+00:12:28,000 --> 00:12:35,360
+[SPEAKER_03] it is the balance of precision and recall and coming to uh reducing hallucination i think
+
+96
+00:12:35,360 --> 00:12:45,280
+[SPEAKER_00] uh yeah so uh how we will uh reduce hallucination that's that case i will say we have to uh like pre-process
+
+97
+00:12:45,280 --> 00:12:53,200
+[SPEAKER_00] the uh i mean images uh we have to uh uh remove the background noise and all and we have to give a
+
+98
+00:12:53,200 --> 00:12:59,520
+[SPEAKER_03] good prompt so that so that system will uh i mean not hallucinate and it will uh give us accurate answers
+
+99
+00:12:59,520 --> 00:13:05,280
+[SPEAKER_00] uh and also we have to uh train the model properly so that also plays a major role
+
+100
+00:13:08,480 --> 00:13:13,040
+[SPEAKER_00] okay actually you want to add something it's something new for you or what
+
+101
+00:13:14,400 --> 00:13:24,640
+[SPEAKER_00] you're already done yeah okay okay so i think uh i think madhurita barti uh you might have understood the
+
+102
+00:13:25,360 --> 00:13:32,640
+[SPEAKER_00] uh approach we are taking right so uh every day uh the first five minutes or ten minutes uh we will put
+
+103
+00:13:32,640 --> 00:13:40,800
+[SPEAKER_02] out the topics which you have uh already gone through and then we'll just together um brainstorm so i am
+
+104
+00:13:40,800 --> 00:13:50,240
+[SPEAKER_02] also new to a ml so i won't be able to teach you so you you people should uh learn uh the new topics
+
+105
+00:13:50,240 --> 00:13:56,000
+[SPEAKER_02] every day you bring new topics for the first five ten minutes we you you you will be given two three
+
+106
+00:13:56,000 --> 00:14:02,240
+[SPEAKER_02] minutes each and you need to talk about what you learned today and what you have explored and then we
+
+107
+00:14:02,240 --> 00:14:11,200
+[SPEAKER_02] will try to uh brainstorm or build something and try to practice something right so it's it's for everyone
+
+108
+00:14:11,200 --> 00:14:20,400
+[SPEAKER_00] barthi madhu uh ananya uh akshay right so i just picked some basic topics to just tease your brain
+
+109
+00:14:21,360 --> 00:14:29,680
+[SPEAKER_00] uh we everything is new for me also so uh these are the five topics which we can discuss today
+
+110
+00:14:29,680 --> 00:14:37,760
+[SPEAKER_02] and this is on top of what you uh akshay or ananya have already explored so just uh food for thought just
+
+111
+00:14:37,760 --> 00:14:48,160
+[SPEAKER_00] uh let's try to discuss these and then tomorrow uh when you come back try to uh like uh read more on
+
+112
+00:14:48,160 --> 00:14:53,760
+[SPEAKER_00] these topics and then share what you learn okay so these are the five topics we'll go through today
+
+113
+00:14:53,760 --> 00:15:00,160
+[SPEAKER_02] so how do we chunk so this is the uh basic i think i like uh deciding what should be the chunk size and
+
+114
+00:15:00,160 --> 00:15:06,480
+[SPEAKER_02] what is the overlap which you were mentioning right so uh we can only return what the chunk contains
+
+115
+00:15:06,480 --> 00:15:12,800
+[SPEAKER_02] and how you cut the document decides what's even findable right so these are the three things we need
+
+116
+00:15:12,800 --> 00:15:21,920
+[SPEAKER_00] to discuss about uh chunking if it is too large the answer among unrelated text and weekends the match
+
+117
+00:15:21,920 --> 00:15:26,880
+[SPEAKER_00] too small it strips away the context which you said again the overlap which you mentioned like
+
+118
+00:15:27,440 --> 00:15:31,200
+[SPEAKER_00] repeat a little text between neighbors so an idea split across a boundary still lands
+
+119
+00:15:31,760 --> 00:15:36,880
+[SPEAKER_02] and there is a no default the right values depend on your documents as you said right like it depends on
+
+120
+00:15:36,880 --> 00:15:42,400
+[SPEAKER_00] if it is a 600 page document or a thousand page document or a one page document right so
+
+121
+00:15:43,760 --> 00:15:49,520
+[SPEAKER_00] chunking is a design decision not a setup step it sets the ceiling on every everything downstream
+
+122
+00:15:50,080 --> 00:15:57,680
+[SPEAKER_00] right so any any questions uh bharti anania
+
+123
+00:16:00,800 --> 00:16:08,880
+[SPEAKER_00] okay then meaning as coordinates uh an embedding turns text into point in space similar meaning sit
+
+124
+00:16:08,880 --> 00:16:14,640
+[SPEAKER_02] close together retrieval is just find the nearest points this is about the embeddings
+
+125
+00:16:16,400 --> 00:16:22,320
+[SPEAKER_00] right i think cosine is what uh anani you were talking about comparing the production yeah
+
+126
+00:16:24,880 --> 00:16:33,120
+[SPEAKER_02] so these are all the other uh aspects of embeddings which i think you can go and explore today uh learn
+
+127
+00:16:33,120 --> 00:16:39,920
+[SPEAKER_02] about these and maybe discuss tomorrow dot product uh rewards magnitude they can rank results
+
+128
+00:16:39,920 --> 00:16:47,280
+[SPEAKER_00] differently match the metric to your model then the embedding model decides where meaning lands a better
+
+129
+00:16:47,280 --> 00:16:54,720
+[SPEAKER_02] one separates text that looks similar but means different things right and why embeddings work is your
+
+130
+00:16:54,720 --> 00:16:59,520
+[SPEAKER_02] question becomes a point two nearby chunks are the ones most likely to hold the answer
+
+131
+00:17:01,360 --> 00:17:06,160
+[SPEAKER_00] so similarity search is isn't magic it's distance between points you choose how to create
+
+132
+00:17:09,120 --> 00:17:18,160
+[SPEAKER_00] any questions concerns okay so what i'm trying to do is whatever you have mentioned akshay and anania
+
+133
+00:17:18,160 --> 00:17:24,080
+[SPEAKER_02] whatever you have mentioned on your resume these topics are on top of your
+
+134
+00:17:27,040 --> 00:17:32,000
+[SPEAKER_00] topics you mentioned so we'll keep on building on your resumes right so that you need not again
+
+135
+00:17:32,000 --> 00:17:38,560
+[SPEAKER_00] start from scratch and maybe bharti mother it might be new to you but i think over the period of time you
+
+136
+00:17:38,560 --> 00:17:46,800
+[SPEAKER_00] will understand this format and then maybe you could also start contributing right then the k k dial which
+
+137
+00:17:48,800 --> 00:17:56,080
+[SPEAKER_00] we discussed in the questions right what should be the k value so fast search and the k dial the index
+
+138
+00:17:56,080 --> 00:18:01,840
+[SPEAKER_00] is how millions of vectors get searched in milliseconds k is how many checks uh chunks you pull back
+
+139
+00:18:04,000 --> 00:18:11,040
+[SPEAKER_00] so most vector search is a and n approximate very fast but it can occasionally skip the true closest match
+
+140
+00:18:11,040 --> 00:18:17,280
+[SPEAKER_02] that's the trade you make to scale so that's why how uh need to define whether the k value should be
+
+141
+00:18:17,280 --> 00:18:25,680
+[SPEAKER_02] less or more right so the it if it is more you will may let's skip the closest match if it is less then you
+
+142
+00:18:25,680 --> 00:18:34,320
+[SPEAKER_00] can't find the right uh this thing yeah k2 low the right chunk never makes the cut k2 high the prompt fills
+
+143
+00:18:34,320 --> 00:18:37,760
+[SPEAKER_00] with loosely related noise and the signal gets diluted okay yeah
+
+144
+00:18:41,280 --> 00:19:01,120
+[SPEAKER_00] and then uh the fourth topic is grounding why do we need grounded answer right and why grounded
+
+145
+00:19:01,120 --> 00:19:07,280
+[SPEAKER_00] answer still break so grounding is nothing but putting retrieve chunks into the prompt so that model
+
+146
+00:19:07,280 --> 00:19:12,880
+[SPEAKER_00] answers your data not its memory but grounding doesn't mean it's correct
+
+147
+00:19:19,040 --> 00:19:22,480
+[SPEAKER_02] so retrieval means if the right chunk was never retrieved the model will fill
+
+148
+00:19:23,040 --> 00:19:28,560
+[SPEAKER_02] fills the gap with a plausible guess so we always we need to ensure that we retrieve the
+
+149
+00:19:29,200 --> 00:19:34,160
+[SPEAKER_00] right information edit and fill it in in the context or else it will just hallucinate
+
+150
+00:19:36,000 --> 00:19:43,200
+[SPEAKER_00] and again the same problem if it's too many chunks then you poison the context and then it will overflow
+
+151
+00:19:43,200 --> 00:19:49,440
+[SPEAKER_00] and it will like all the unnecessary low priority information would be filled and the high priority
+
+152
+00:19:49,440 --> 00:19:54,080
+[SPEAKER_00] critical information will just overflow out of it and then it's just like a glass of water right if you
+
+153
+00:19:54,080 --> 00:20:03,760
+[SPEAKER_02] are uh if you want to drink uh i mean some flavored water flavored juice you will put a glass of water and then
+
+154
+00:20:03,760 --> 00:20:08,640
+[SPEAKER_02] you drop a few more drops of syrup and there is no space for the syrup the syrup will just flow out
+
+155
+00:20:09,200 --> 00:20:14,000
+[SPEAKER_02] and you will still end up with water only so your entire goal of having flavored water will
+
+156
+00:20:14,000 --> 00:20:19,920
+[SPEAKER_02] be gone so we just need to focus on that retrieving the information and retrieving the right information
+
+157
+00:20:22,160 --> 00:20:28,400
+[SPEAKER_02] and then there is a problem with conflict like if two chunks disagree and then the model will pick the wrong one
+
+158
+00:20:28,960 --> 00:20:33,760
+[SPEAKER_02] so we need to also ensure that we are not retrieving conflicting chunks
+
+159
+00:20:36,080 --> 00:20:40,480
+[SPEAKER_00] so retrieval quality is the ceiling on answer quality fix retrieval before you blame the model
+
+160
+00:20:44,480 --> 00:20:54,000
+[SPEAKER_00] then measure the retriever so you can measure your model accuracy ma p now measure the retriever on its own
+
+161
+00:20:54,640 --> 00:21:02,160
+[SPEAKER_00] before the lm ever sees the context so this is the two things we need to measure recall and hit rate
+
+162
+00:21:03,280 --> 00:21:06,400
+[SPEAKER_00] so recall is like did the correct chunk appear in the top k
+
+163
+00:21:07,280 --> 00:21:12,720
+[SPEAKER_00] the single most useful number in a rack and then the heat rate like how often retrieval surfaces at least
+
+164
+00:21:12,720 --> 00:21:14,160
+[SPEAKER_00] one relevant chunk at all
+
+165
+00:21:16,960 --> 00:21:23,920
+[SPEAKER_00] so this is a task for you i mean akshay and ananya maybe bharti you can also give a try madhu and bharti
+
+166
+00:21:23,920 --> 00:21:30,640
+[SPEAKER_02] so take one of your rack project change the chunk size and report how recall game moves and tomorrow you can
+
+167
+00:21:30,640 --> 00:21:37,120
+[SPEAKER_00] discuss the number and on top of it uh just whatever five topics we discussed today
+
+168
+00:21:37,760 --> 00:21:46,160
+[SPEAKER_02] like chunking embeddings top k grounding and measuring of the retriever just keep on exploring that
+
+169
+00:21:46,160 --> 00:21:52,320
+[SPEAKER_02] and tomorrow you need to speak about like two minutes or three minutes on what you learned on these five
+
+170
+00:21:52,320 --> 00:21:57,920
+[SPEAKER_00] topics tomorrow and then we will keep on increasing our difficulty level on those topics and then
+
+171
+00:21:58,640 --> 00:22:04,880
+[SPEAKER_00] we will go ahead okay so today was just a basic intro on how this whole training model works
+
+172
+00:22:06,160 --> 00:22:12,560
+[SPEAKER_02] i didn't want to start with a new topic because i wanted to start off from your resumes so slowly we'll
+
+173
+00:22:12,560 --> 00:22:18,880
+[SPEAKER_02] from your resumes we'll keep on adding new topics every week right and we'll work on python we'll work on
+
+174
+00:22:20,560 --> 00:22:29,200
+[SPEAKER_02] your system design we'll work on uh operation devops operations we'll also touch application development
+
+175
+00:22:29,200 --> 00:22:35,840
+[SPEAKER_00] like react and how to build front-end applications right so we'll try to touch everything but we'll pick
+
+176
+00:22:35,840 --> 00:22:41,760
+[SPEAKER_00] new topic every week every day we'll uh i mean once we pick a new topic on monday
+
+177
+00:22:42,640 --> 00:22:48,240
+[SPEAKER_00] that entire week we'll just focus on that topic you go so you you will go explore learn and then come
+
+178
+00:22:48,240 --> 00:22:53,920
+[SPEAKER_02] and share that and every next week we'll pick up new topic so i think in six months you will be able to
+
+179
+00:22:55,360 --> 00:23:01,600
+[SPEAKER_02] not only develop uh applications deploy the applications create a good system design for the application
+
+180
+00:23:02,240 --> 00:23:08,000
+[SPEAKER_02] then do the testing for your application deploy the application so end-to-end application development you
+
+181
+00:23:08,000 --> 00:23:13,200
+[SPEAKER_02] will be given basics you need not go deeper into that but at least having the basics will help you
+
+182
+00:23:13,200 --> 00:23:20,800
+[SPEAKER_02] understand how the application is built and where aiml could be integrated right so that is the whole
+
+183
+00:23:20,800 --> 00:23:28,160
+[SPEAKER_00] plan for this training so any questions feedback ananya bharati madhu akshay
+
+184
+00:23:36,160 --> 00:23:43,200
+[SPEAKER_02] okay so yeah that's it i'll also uh yeah regarding the assessment so every day after the training
+
+185
+00:23:43,920 --> 00:23:51,360
+[SPEAKER_02] uh i'll send you a link for uh assessment so you just need to uh fill in the assessment and then
+
+186
+00:23:51,360 --> 00:23:57,840
+[SPEAKER_02] all these assessments we will use for the performance uh measurement right so try to ensure that you
+
+187
+00:24:00,080 --> 00:24:05,760
+[SPEAKER_00] practice well before uh uh practice well before uh attempting the assessment right yeah so i'll um
+
+188
+00:24:05,760 --> 00:24:09,760
+[SPEAKER_00] maybe in one hour i'll send the assessment links for whatever topics we discussed
+
+189
+00:24:10,480 --> 00:24:16,080
+[SPEAKER_00] just uh quick uh five to seven questions uh multiple choice nothing complicated okay
+
+190
+00:24:16,640 --> 00:24:21,840
+[SPEAKER_00] and uh this task also you try to check tomorrow in any of your bad budgets
+
+191
+00:24:23,040 --> 00:24:28,480
+[SPEAKER_00] okay so yeah that's it uh wait for the assessment and then respond that's it for today
+
+192
+00:24:31,040 --> 00:24:32,320
+[SPEAKER_00] anyone has any questions
+
+193
+00:24:34,320 --> 00:24:50,000
+[SPEAKER_00] no i don't have any please okay akshay all good okay party yes ma'am okay so you can also like ask
+
+194
+00:24:50,000 --> 00:24:58,000
+[SPEAKER_00] questions and uh whatever you want to learn you can come up with the topics also okay so that we can
+
+195
+00:24:58,000 --> 00:25:01,140
+[SPEAKER_00] assist you and yeah that's it

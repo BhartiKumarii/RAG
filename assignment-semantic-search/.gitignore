@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Extraction working files (regenerable; keep only transcript + JSON in corpus/)
+tools/*.wav
+corpus/**/frames/
+corpus/**/crops/
+*.pt          # downloaded YOLO weights
+yolov8n.pt
+
+# Local env / secrets
+.env
+.env.local
+
+# OS
+.DS_Store

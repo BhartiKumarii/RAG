@@ -1,0 +1,14 @@
+# Extraction toolkit dependencies (you RUN these tools; you do not edit them).
+#
+# System binaries expected on PATH (install once):
+#   ffmpeg        brew install ffmpeg
+#   whisper-cli   brew install whisper-cpp
+#   tesseract     brew install tesseract        (add tesseract-lang for +ara etc.)
+#
+# The transcribe/diarize step also needs its own cached venv + sherpa-onnx
+# models; run the Day 1 setup once to populate them.
+
+ultralytics>=8.2      # YOLOv8n object detection (yolo_detect.py)
+face_recognition>=1.3 # face detection + clustering (face_detect.py)
+Pillow>=10.0          # crop/resize frames
+numpy>=1.26

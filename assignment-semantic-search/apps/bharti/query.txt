@@ -1,0 +1,14 @@
+"""What is an embedding?
+Ans-"""
+
+"""What does cosine similarity measure?
+Ans-"""
+
+"""How do you choose a chunk size for retrieval?
+Ans-"""
+
+"""Why use approximate nearest-neighbour search instead of comparing everything?
+Ans-"""
+
+"""what is vector search?
+Ans-"""

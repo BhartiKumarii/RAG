@@ -1,0 +1,12 @@
+# Starter dependencies. Use a Python 3.11 or 3.12 virtualenv.
+
+psycopg[binary]>=3.2       # Postgres driver
+pgvector>=0.3              # vector type adapter for psycopg
+sentence-transformers>=3.0 # open embedding models (your embed.py)
+numpy>=1.26
+
+# You also need a running Postgres with the pgvector extension available.
+# Local option:
+#   docker run -d --name pgv -e POSTGRES_PASSWORD=postgres -p 5432:5432 pgvector/pgvector:pg16
+#   psql "postgresql://postgres:postgres@localhost/postgres" -c "CREATE DATABASE semantic_search;"
+#   psql "postgresql://postgres:postgres@localhost/semantic_search" -f schema.sql

@@ -1,0 +1,178 @@
+[
+  {
+    "start": 0.0,
+    "text": " Welcome back to Developer News. Today, we have announcements from Gemini 3.5 Live Translate,"
+  },
+  {
+    "start": 6.32,
+    "text": " Gemma 4, 12B on AI Edge, and Gemini in Xcode."
+  },
+  {
+    "start": 11.0,
+    "text": " I'm your host Anaya Mehta. We hope that you've been keeping up on all of the Google Developer"
+  },
+  {
+    "start": 16.4,
+    "text": " announcements coming out of Google I.O. If not, we've got you covered. Let's get into it!"
+  },
+  {
+    "start": 25.68,
+    "text": " First up, let's talk about Gemini 3.5 Live Translate."
+  },
+  {
+    "start": 29.279999999999998,
+    "text": " Google launched Gemini 3.5 Live Translate, a new speech-to-speech model that can"
+  },
+  {
+    "start": 34.56,
+    "text": " interpret more than 70 languages in near real-time. Developers can now build experiences that"
+  },
+  {
+    "start": 40.4,
+    "text": " preserve speakers' tone, pitch, and pacing, resulting in more natural-sounding experiences"
+  },
+  {
+    "start": 46.0,
+    "text": " than voice translation apps of the past. Wanna hear it in action? Here's Thor and Anuta from the"
+  },
+  {
+    "start": 52.08,
+    "text": " DeepMine team to show you how it works. Hey everyone, today we're excited to launch Gemini 3.5 Live"
+  },
+  {
+    "start": 58.88,
+    "text": " Translate. Our latest model built for seamless speech-to-speech translation. While it's already"
+  },
+  {
+    "start": 62.800000000000004,
+    "text": " been powering experiences in Google Translate, we are now bringing this capability directly to"
+  },
+  {
+    "start": 67.2,
+    "text": " developers via our API. You can integrate real-time translation across 70 plus supported languages"
+  },
+  {
+    "start": 72.4,
+    "text": " for both input and output starting today. Let's say you're presenting to an international audience"
+  },
+  {
+    "start": 78.0,
+    "text": " that speaks a range of different languages. Here as a speaker, I can create a new session,"
+  },
+  {
+    "start": 83.92,
+    "text": " and I can capture the audio from my microphone. I then get a URL or a QR code for my attendees"
+  },
+  {
+    "start": 91.84,
+    "text": " to scan this on their phone and join the session and start listening in their own preferred language."
+  },
+  {
+    "start": 98.4,
+    "text": " So, let's start maybe with Japanese. When a user starts listening in a new language,"
+  },
+  {
+    "start": 104.8,
+    "text": " user can start listening in a new language. The model is now available"
+  },
+  {
+    "start": 112.72,
+    "text": " on the Gemini API and in AI Studio. You can also try it in Google Translate on iOS and Android"
+  },
+  {
+    "start": 118.32,
+    "text": " by connecting any pair of headphones, and we're also rolling it out in private preview on Google Meet."
+  },
+  {
+    "start": 123.28,
+    "text": " To watch the full announcement video and read the blog post, check the links in the description."
+  },
+  {
+    "start": 129.52,
+    "text": " Next, let's talk about bringing powerful AI directly to your local development environment."
+  },
+  {
+    "start": 134.72,
+    "text": " We are excited to announce Gemma 4.12b, now optimized for local execution using Google AI Edge."
+  },
+  {
+    "start": 142.16000000000003,
+    "text": " This lightweight but highly capable open model is built to bring"
+  },
+  {
+    "start": 145.84,
+    "text": " agentic workflows directly to your laptop. With tool calling and structured JSON output"
+  },
+  {
+    "start": 151.12,
+    "text": " running on your device, local agents can take on complex, multi-step tasks with greater reliability."
+  },
+  {
+    "start": 157.28,
+    "text": " To make it widely accessible, the model is optimized for WebGPU, Vulkan, and mobile NPUs via Google AI"
+  },
+  {
+    "start": 164.16000000000003,
+    "text": " Edge. And with advanced reasoning and coding capabilities packed into a 12 billion parameter model,"
+  },
+  {
+    "start": 170.32,
+    "text": " you can build and run secure AI agents entirely offline. Gemma 4.12b minimizes latency and removes"
+  },
+  {
+    "start": 177.6,
+    "text": " the need for constant cloud connectivity, making local prototyping and offline deployment smoother"
+  },
+  {
+    "start": 183.51999999999998,
+    "text": " than ever. Unlike traditional multimodal models, there are no additional vision or audio encoders."
+  },
+  {
+    "start": 189.76,
+    "text": " Instead, multimodal tokens flow directly into the LLM backbone, creating a more streamlined"
+  },
+  {
+    "start": 195.44,
+    "text": " and efficient architecture. For all the details on the release, check out the announcement blog"
+  },
+  {
+    "start": 200.48,
+    "text": " linked in the description below. Finally, we are bringing the helpfulness of Gemma"
+  },
+  {
+    "start": 205.68,
+    "text": " I directly to Apple platform developers with a launch of Gemma I in Xcode. Gemma I in Xcode"
+  },
+  {
+    "start": 211.12,
+    "text": " allows you to perform complex, multi-step tasks with both swift and objective seat,"
+  },
+  {
+    "start": 216.32,
+    "text": " without switching tools or windows. This agentic experience helps you build,"
+  },
+  {
+    "start": 220.96,
+    "text": " review code, and fix bugs faster. Individual developers can get started quickly"
+  },
+  {
+    "start": 226.08,
+    "text": " by obtaining a self-serve Gemma I API key from Google AI Studio. Gemma I in Xcode can also be used"
+  },
+  {
+    "start": 233.04000000000002,
+    "text": " with Gemma I Enterprise agent platform, so you can tap into your organization's dedicated"
+  },
+  {
+    "start": 238.24,
+    "text": " quotas and data privacy parameters. That concludes all the updates we have for you in this episode."
+  },
+  {
+    "start": 245.04000000000002,
+    "text": " What are you looking forward to the most? Drop your answers in the comments."
+  },
+  {
+    "start": 249.20000000000002,
+    "text": " Thanks for watching, and we'll see you next time."
+  }
+]

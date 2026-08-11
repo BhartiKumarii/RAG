@@ -1,3 +1,4 @@
 .gradio
 __pycache__
 /sample_upload.pdf
+/known_faces.json

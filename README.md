@@ -78,3 +78,10 @@ Each app opens a Gradio interface in the browser.
 2. Run the script you want.
 3. Open the Gradio link shown in the terminal.
 4. Upload an image or PDF and interact with the app.
+
+## Troubleshooting
+
+- **"Address already in use" on 7860/7861**: another Gradio app (or a previous run of the same script) is still bound to that port. Stop it, or edit the `server_port` value in the script.
+- **`dlib`/`face_recognition` install fails**: install CMake and a C++ toolchain first (see the Setup section), then retry `pip install dlib`.
+- **Ollama connection errors**: make sure `ollama serve` is running and the required model has been pulled (`ollama pull gemma3`, `ollama pull nomic-embed-text`) before starting `image_classification.py` or `practice.py`.
+- **BLIP model download hangs or fails**: the captioning app downloads the model from Hugging Face on first run — check your network access and retry.

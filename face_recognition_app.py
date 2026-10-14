@@ -1,6 +1,6 @@
 """Face recognition demo: enroll people by name, then recognize them in new
 photos. Runs fully locally on the `face_recognition` (dlib) library already
-used by tools/face_detect.py in assignment-semantic-search — same
+used by tools/face_detect.py in BhartiKumarii/semantic-video-search — same
 detector/encoder, just matched against named embeddings instead of being
 clustered anonymously.
 
@@ -110,7 +110,8 @@ with gr.Blocks(title="Face Recognition") as demo:
         "# Face Recognition\n"
         "Enroll people by name, then recognize them in new photos. Runs fully "
         "locally (no cloud, no API key) using the same `face_recognition` "
-        "encoder as `assignment-semantic-search/tools/face_detect.py`."
+        "encoder as [`semantic-video-search/tools/face_detect.py`]"
+        "(https://github.com/BhartiKumarii/semantic-video-search/blob/main/tools/face_detect.py)."
     )
 
     with gr.Tab("Enroll"):
